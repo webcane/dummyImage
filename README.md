@@ -1,4 +1,4 @@
 dummyImage
 ==========
 
-Creates dummy image with inputed cyrillic text
+Dummy image generator with cyrillic text
