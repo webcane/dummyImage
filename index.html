@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <meta charset="utf-8">
+        <title>Cyrillic dummy images</title>
+        <meta name="generator" content="Bootply">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="" type="text/css" rel="stylesheet">
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <!-- CSS code from Bootply.com editor -->
+        <style type="text/css">
+            
+        </style>
+</head>
+<body>
+    
+    <!-- HTML code from Bootply.com editor -->
+    <div class="container">
+      <div class="row">
+        
+    <div class="col-lg-6 col-lg-offset-3">
+      <label for="">Введите слово на кирилице:</label>
+    </div>
+    
+    <div class="input-group col-lg-6 col-lg-offset-3">
+       <input type="text" class="form-control" id="cyrillic-input">
+       <span class="input-group-btn">
+          <button class="btn btn-default" id="go-btn" type="button">Go!</button>
+       </span>
+	</div><!-- /input-group -->    
+
+    
+    <div class="col-lg-6 col-lg-offset-3">
+      <h4 id="utf-result">0xD00x900xD00xB10xD10x81</h4>
+    </div><!-- /.col-lg-6 .col-lg-offset-3  -->
+    
+    <div class="col-lg-3">
+    </div><!-- /.col-lg-3  -->  
+    
+    <div class="col-lg-6 col-lg-offset-3">
+      <img class="thumbnail img-responsive" id="dumy-img" src="http://dummyimage.com/350x350/000/fff" title="http://dummyimage.com/350x350/000/fff&amp;text=">
+    </div><!-- /.col-lg-6 .col-lg-offset-3  -->
+    
+    <div class="col-lg-3">
+    </div><!-- /.col-lg-3  -->     
+    
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+  <!-- JavaScript jQuery code from Bootply.com editor  -->
+  <script type="text/javascript">
+        
+        $(document).ready(function() {
+        
+            $('#go-btn').click(function () {
+    var btn = $(this);
+    var input = $("#cyrillic-input").val();
+    //console.log(utf);
+ 
+    input = encodeURIComponent(input);
+    //console.log(input);
+  
+    var utf = input.replace(new RegExp("%",'g'), "0x");
+    //console.log(utf);
+    
+    $('#utf-result').text(utf);
+  
+    var dummyImage = $('#dumy-img');
+    dummyImage.attr("src",dummyImage.attr("title") + utf);
+    //console.log(dummyImage.attr("src"));
+});
+        
+        });
+        
+        </script>
+</body></html>
